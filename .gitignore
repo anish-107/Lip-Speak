@@ -1,0 +1,136 @@
+# ============================
+# Root gitignore for Lip Speak
+# ============================
+
+# ----------------------------
+# Folders to exclude
+# ----------------------------
+__pycache__/
+.ipynb_checkpoints/
+env/
+venv/
+build/
+dist/
+.cache/
+logs/
+temp/
+core/
+output/
+data/
+datasets/
+coreTest/
+mainTest/
+demo/
+records/
+docs/
+app/
+scripts/
+resources/
+
+# ----------------------------
+# Executables / Compiled files
+# ----------------------------
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.class
+*.o
+*.obj
+*.a
+*.pyc
+*.pyo
+*.pyd
+
+# ----------------------------
+# Environment / Config
+# ----------------------------
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.pid
+
+# ----------------------------
+# Files (temporary / generated)
+# ----------------------------
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+*.old
+*.pyc
+*.pkl
+*.jsonl
+*.csv
+*.db
+*.sqlite3
+
+# ----------------------------
+# Zips / Archives
+# ----------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# ----------------------------
+# Model & Checkpoints
+# ----------------------------
+*.pt
+*.pth
+*.h5
+*.ckpt
+*.tflite
+*.onnx
+*.pb
+*.weights
+
+# ----------------------------
+# Test / Coverage
+# ----------------------------
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.pytest_cache/
+junit.xml
+
+# ----------------------------
+# Miscellaneous
+# ----------------------------
+*.bak
+*.tmp
+*.swp
+*.swo
+*.log
+*.cfg
+*.ini
+*.iml
+Thumbs.db
+
+# ----------------------------
+# IDE specific
+# ----------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# ----------------------------
+# System specific
+# ----------------------------
+.DS_Store
+ehthumbs.db
+Icon?
+desktop.ini
