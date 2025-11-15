@@ -34,7 +34,7 @@ PORT : int = int(app.config.get("PORT", "5000"))
 def index() -> Response:
     data : Dict[str, Any] = {
         "message" : "Hello World",
-        "ok" : False
+        "ok" : True
     }
 
     return jsonify (data)
