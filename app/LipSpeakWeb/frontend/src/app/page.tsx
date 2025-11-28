@@ -5,13 +5,22 @@
  * @returns a tsx page
  */
 
-import LandingPage from "./pages/LandingPage";
-
+import { Header } from "@/components/header"
+import { HeroSection } from "@/components/hero-section"
+import { DemoSection } from "@/components/demo-section"
+import { UploadSection } from "@/components/upload-section"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <>
-      <LandingPage></LandingPage>
-    </>
-  );
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <HeroSection />
+        <DemoSection />
+        <UploadSection />
+      </main>
+      <Footer />
+    </div>
+  )
 }

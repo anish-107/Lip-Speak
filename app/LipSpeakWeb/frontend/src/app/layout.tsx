@@ -5,23 +5,32 @@
  * @returns a tsx page
  */
 
-import "./globals.css";
-import type { Metadata } from "next";
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter, Geist_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
+
+const _inter = Inter({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Lipspeak",
-  description: "Lipspeak is an end-to-end deep learning model for visual speech recognition.",
-};
+  title: "Lipspeak - AI Lip Reading Transcription",
+  description: "Transform silent videos into text with AI-powered lip reading technology",
+  generator: "v0.app",
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <html lang="en">
-      <head />
-      <body>{children}</body>
+      <body className={`font-sans antialiased`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
-  );
+  )
 }
