@@ -1,7 +1,14 @@
+/**
+ * @authors Anish, Bidipta, Dibyasmita 
+ * @date 4-12-2025
+ * @description upload section component
+ * @returns a tsx page
+ */
+
+
 "use client"
 
 import type React from "react"
-
 import { useState, useCallback } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -44,7 +51,7 @@ export function UploadSection() {
     if (!file) return
 
     setIsProcessing(true)
-    setTranscript("") // clear previous output
+    setTranscript("") 
 
     try {
       const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"
@@ -65,17 +72,15 @@ export function UploadSection() {
       const data = await response.json()
       setTranscript(data.transcript || "No transcript returned")
     } catch (error: unknown) {
-        if (error instanceof Error) {
-            setTranscript("Error: " + error.message)
-        } else {
-            setTranscript("Unexpected error occurred")
-        }
-    }
-    finally {
+      if (error instanceof Error) {
+        setTranscript("Error: " + error.message)
+      } else {
+        setTranscript("Unexpected error occurred")
+      }
+    } finally {
       setIsProcessing(false)
     }
   }
-  // -------------------------------------------------------------------
 
   const clearFile = () => {
     setFile(null)
@@ -117,7 +122,7 @@ export function UploadSection() {
 
         <div className="mx-auto max-w-3xl space-y-6">
           {/* Upload Area */}
-          <Card className="border-border/50">
+          <Card className="border-border/50 bg-card/40">
             <CardContent className="p-6">
               <div
                 className={`relative rounded-xl border-2 border-dashed transition-colors ${
@@ -174,10 +179,10 @@ export function UploadSection() {
           </div>
 
           {/* Transcript Output */}
-          <Card className="border-border/50">
+          <Card className="border-border/50 bg-card/40">
             <CardContent className="p-6">
               <h3 className="mb-4 text-lg font-semibold text-foreground">Transcript</h3>
-              <div className="min-h-[150px] rounded-lg bg-secondary/50 p-4">
+              <div className="min-h-[150px] rounded-lg bg-secondary/30 p-4">
                 {transcript ? (
                   <p className="text-foreground leading-relaxed">{transcript}</p>
                 ) : (

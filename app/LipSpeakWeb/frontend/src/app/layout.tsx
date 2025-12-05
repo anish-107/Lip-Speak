@@ -17,7 +17,6 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Lipspeak - AI Lip Reading Transcription",
   description: "Transform silent videos into text with AI-powered lip reading technology",
-  generator: "v0.app",
 }
 
 export default function RootLayout({

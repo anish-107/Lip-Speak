@@ -1,12 +1,22 @@
+/**
+ * @authors Anish, Bidipta, Dibyasmita
+ * @date 4-12-2025
+ * @description header component
+ */
+
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-gradient-to-r from-black/30 to-black/60 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -25,16 +35,37 @@ export function Header() {
           <span className="text-xl font-bold text-foreground">Lipspeak</span>
         </Link>
 
-        <nav className="flex items-center gap-2">
-          <Button variant="secondary" asChild>
+        {/* Navigation Buttons */}
+        <nav className="flex items-center gap-3">
+
+          {/* SAME STYLE + PINK HOVER */}
+          <Button
+            variant="secondary"
+            asChild
+            className="px-4 py-2 bg-secondary/60 text-foreground border border-border 
+                       hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <Link href="/about">About</Link>
+          </Button>
+
+          <Button
+            variant="secondary"
+            asChild
+            className="px-4 py-2 bg-secondary/60 text-foreground border border-border 
+                       hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
             <Link href="/login">Login</Link>
           </Button>
-          <Button variant="secondary" asChild>
+
+          <Button
+            variant="secondary"
+            asChild
+            className="px-4 py-2 bg-secondary/60 text-foreground border border-border 
+                       hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
             <Link href="/signup">Sign up</Link>
           </Button>
-          <Button variant="secondary" asChild>
-            <Link href="/about">About us</Link>
-          </Button>
+
         </nav>
       </div>
     </header>

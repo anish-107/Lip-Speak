@@ -1,3 +1,11 @@
+/**
+ * @authors Anish, Bidipta, Dibyasmita 
+ * @date 4-12-2025
+ * @description Demo Section Component
+ * @returns a tsx page
+ */
+
+
 "use client"
 
 import { useState, useRef, useEffect } from "react"
@@ -53,7 +61,6 @@ export function DemoSection() {
     }
   }
 
-  // FIXED togglePlay with Promise-safe play
   const togglePlay = async () => {
     const video = videoRef.current
     if (!video) return
@@ -117,7 +124,7 @@ export function DemoSection() {
   }
 
   return (
-    <section id="demo-section" className="py-16 md:py-24 bg-card">
+    <section id="demo-section" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">See How It Works</h2>
@@ -128,7 +135,7 @@ export function DemoSection() {
 
         <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto items-center">
           {/* Left side text */}
-          <Card className="h-full border-border/50 bg-secondary/30">
+          <Card className="h-full border-border/50 bg-secondary/20">
             <CardContent className="p-8">
               <h3 className="mb-4 text-2xl font-semibold text-foreground">Revolutionary AI Lip Reading</h3>
               <div className="space-y-4 text-muted-foreground">
@@ -155,15 +162,14 @@ export function DemoSection() {
           </Card>
 
           {/* Video Player */}
-          <Card className="overflow-hidden border-border/50">
+          <Card className="overflow-hidden border-border/50 bg-card/60">
             <CardContent className="p-0">
               <div
                 ref={containerRef}
-                className="relative aspect-video bg-muted group"
+                className="relative aspect-video bg-muted group rounded-md overflow-hidden"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={() => isPlaying && setShowControls(false)}
               >
-                {/* FIXED VIDEO PATH */}
                 <video
                   ref={videoRef}
                   className="h-full w-full object-cover cursor-pointer"
@@ -179,11 +185,11 @@ export function DemoSection() {
                 {/* Play overlay */}
                 {!isPlaying && (
                   <div
-                    className="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer"
+                    className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
                     onClick={togglePlay}
                   >
-                    <Button size="lg" className="h-16 w-16 rounded-full shadow-lg hover:scale-110 transition-transform">
-                      <Play className="h-8 w-8 ml-1" />
+                    <Button size="lg" className="h-16 w-16 rounded-full shadow-lg hover:scale-110 transition-transform bg-primary">
+                      <Play className="h-8 w-8 ml-1 text-primary-foreground" />
                     </Button>
                   </div>
                 )}
