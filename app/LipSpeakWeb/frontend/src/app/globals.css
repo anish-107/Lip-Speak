@@ -3,40 +3,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* =============================== */
-/* 🌈  PINK → BLACK THEME COLORS   */
-/* =============================== */
-
 :root {
-  /* Global background + text */
-  --background: #0b0b0d; /* near black */
+  --background: #0b0b0d;
   --foreground: #ffffff;
 
-  /* Cards / surfaces */
   --card: #111015;
   --card-foreground: #ffffff;
 
-  /* Popovers */
   --popover: #111015;
   --popover-foreground: #ffffff;
 
-  /* Primary (Pink) */
   --primary: #ff4da6;
   --primary-foreground: #ffffff;
 
-  /* Secondary (Dark Soft) */
   --secondary: #1a1a1d;
   --secondary-foreground: #f5c2e7;
 
-  /* Accent Pink */
   --accent: #ff77c6;
   --accent-foreground: #ffffff;
 
-  /* Muted grey tones */
   --muted: #2a2a2d;
   --muted-foreground: #d9a6c7;
 
-  /* System utils */
   --destructive: #ff3b5c;
   --destructive-foreground: #ffffff;
 
@@ -44,7 +32,6 @@
   --input: #2b2b2f;
   --ring: #ff4da6;
 
-  /* Charts (optional colors) */
   --chart-1: #ff4da6;
   --chart-2: #ff77c6;
   --chart-3: #d948a1;
@@ -53,7 +40,6 @@
 
   --radius: 0.625rem;
 
-  /* Sidebar colors */
   --sidebar: #111015;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #ff4da6;
@@ -63,10 +49,6 @@
   --sidebar-border: #2b2b2f;
   --sidebar-ring: #ff4da6;
 }
-
-/* =============================== */
-/* 🌙 DARK MODE OVERRIDES          */
-/* =============================== */
 
 .dark {
   --background: #060606;
@@ -113,10 +95,6 @@
   --sidebar-ring: #ff64b8;
 }
 
-/* =============================== */
-/* 🌐 Tailwind theme mapping       */
-/* =============================== */
-
 @theme inline {
   --font-sans: "Inter", "Inter Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
@@ -162,10 +140,6 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* =============================== */
-/* 🎨 GLOBAL BASE STYLES           */
-/* =============================== */
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -173,8 +147,6 @@
 
   body {
     @apply text-foreground;
-
-    /* MAIN BACKGROUND GRADIENT */
     background: linear-gradient(135deg, #ff4da6 0%, #0b0b0d 70%);
     background-attachment: fixed;
   }
